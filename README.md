@@ -1,4 +1,5 @@
 # vim-config
+![vim](./img/img.png)
 
 Repositório para minha configuração pessoal do Vim.
 
