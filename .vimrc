@@ -31,6 +31,9 @@ Plug 'luochen1990/rainbow'
 " Evita problemas de formatação.
 Plug 'ntpeters/vim-better-whitespace'
 
+ " Substitua a tela inicial do Vim por uma lista customizável dos seus arquivos recentes e sessões de trabalho.
+ 35 Plug 'mhinz/vim-startify'
+
 call plug#end()
 
 " Atalhos
