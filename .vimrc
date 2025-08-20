@@ -74,3 +74,6 @@ let g:go_highlight_structs = 1
 " O CoC.nvim precisa de mais configurações para funcionar plenamente.
 " Depois de instalar os plugins e reiniciar o Vim, execute :CocInstall coc-go para instalar o LSP do Go.
 let g:coc_global_extensions = ['coc-go']
+
+" Atalho para abrir o terminal com a tecla F5
+nnoremap <F1> :belowright terminal<CR>
