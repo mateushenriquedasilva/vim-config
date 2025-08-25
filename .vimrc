@@ -10,6 +10,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Inclui sintaxe, linting, e ferramentas como GoImports.
 Plug 'fatih/vim-go'
 
+" Adicione este plugin para o destaque de sintaxe de Java
+Plug 'sheerun/vim-polyglot'
+
 " Gerenciador de arquivos.
 " Essencial para navegar pela estrutura de projetos.
 Plug 'preservim/nerdtree'
@@ -20,7 +23,6 @@ Plug 'ryanoasis/vim-devicons'
 
 " Tema de cores para o Vim.
 " Melhora a legibilidade do código.
-" Existem outros temas populares, como 'sainnhe/gruvbox-material' (o que você já usa), 'dracula/vim' ou 'morhetz/gruvbox'.
 Plug 'sainnhe/gruvbox-material'
 
 " Destaque de parênteses e chaves correspondentes.
@@ -31,49 +33,43 @@ Plug 'luochen1990/rainbow'
 " Evita problemas de formatação.
 Plug 'ntpeters/vim-better-whitespace'
 
- " Substitua a tela inicial do Vim por uma lista customizável dos seus arquivos recentes e sessões de trabalho.
- 35 Plug 'mhinz/vim-startify'
+" Substitua a tela inicial do Vim por uma lista customizável dos seus arquivos recentes e sessões de trabalho.
+Plug 'mhinz/vim-startify'
 
 call plug#end()
+
+" --- Configurações Gerais ---
 
 " Atalhos
 " Use <F2> para abrir e fechar o NERDTree, mais fácil de alcançar.
 noremap <F2> :NERDTreeToggle<CR>
 
-" Formata o código Go automaticamente ao salvar o arquivo.
-" Isso usa a ferramenta GoImports que está no plugin fatih/vim-go.
-" O comando GoImports organiza os imports e formata o código.
-autocmd BufWritePost *.go :silent GoImports
-
-" Configurações gerais
 " Exibe os números de linha.
 set number
 
+" Formata o código Go automaticamente ao salvar o arquivo.
+autocmd BufWritePost *.go :silent GoImports
+
 " Use o tema gruvbox-material
 colorscheme gruvbox-material
-" Configuração para o tema, se desejar.
-" let g:gruvbox_material_background = 'hard'
-" let g:gruvbox_material_foreground = 'material'
 
 " Ativar a realocação de parênteses do plugin Rainbow.
-" Isso destaca parênteses e chaves com cores diferentes para cada nível.
 let g:rainbow_active = 1
 
-" Configurações do Go
-" Habilita o autoformato do goimports ao salvar.
+" --- Configurações Go ---
 let g:go_fmt_command = "goimports"
-" Habilita a sintaxe e outras funcionalidades do plugin.
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_structs = 1
 
-" Configurações do CoC
-" Use a função de autocompletar do CoC.
-" O CoC.nvim precisa de mais configurações para funcionar plenamente.
-" Depois de instalar os plugins e reiniciar o Vim, execute :CocInstall coc-go para instalar o LSP do Go.
-let g:coc_global_extensions = ['coc-go']
+" --- Configurações CoC ---
+" Instale o LSP para Go e Java. 
+" Após salvar e fechar o Vim, ao reabrir, execute os comandos:
+" :CocInstall coc-go
+" :CocInstall coc-java
+let g:coc_global_extensions = ['coc-go', 'coc-java']
 
 " Atalho para abrir o terminal com a tecla F1
 nnoremap <F1> :belowright terminal<CR>
