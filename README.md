@@ -1,41 +1,62 @@
-# vim-config
-![vim](./img/img.png)
+# Vim Config
 
-Repositório para minha configuração pessoal do Vim.
+Personal Vim configuration repository.
 
-## Sobre
+## Overview
 
-Este repositório contém meus arquivos de configuração do Vim, otimizados para produtividade, navegação eficiente e suporte a diversas linguagens de programação.
+This repository centralizes a custom Vim setup focused on productivity, readability, and efficient editing workflows. It is intended as a reproducible dotfiles-style configuration that can be installed quickly on new environments.
 
-## Instalação
+## Features
 
-Clone este repositório em seu diretório home:
+- Custom `.vimrc` with editing improvements
+- Opinionated defaults for navigation and editing
+- Version-controlled configuration for portability
+- Screenshot/media folder for visual references (`img/`)
 
-```sh
-git clone https://github.com/seu-usuario/vim-config.git ~/.vim
+## Contents
+
+- `.vimrc`: core Vim configuration
+- `img/`: optional visual documentation
+
+## Installation
+
+1. Backup existing Vim config:
+
+```bash
+cp ~/.vimrc ~/.vimrc.backup
 ```
 
-Crie um link simbólico para o arquivo `.vimrc`:
+2. Clone this repository:
 
-```sh
-ln -sf ~/.vim/vimrc ~/.vimrc
+```bash
+git clone https://github.com/mateushenriquedasilva/vim-config.git
+cd vim-config
 ```
 
-Abra o Vim para garantir que as configurações foram aplicadas corretamente.
+3. Apply configuration:
 
-## Plugins
-
-Os plugins são gerenciados via [vim-plug](https://github.com/junegunn/vim-plug) (ou outro gerenciador, se aplicável). Para instalar os plugins, abra o Vim e execute:
-
-```
-:PlugInstall
+```bash
+cp .vimrc ~/.vimrc
 ```
 
-## Estrutura
+On Windows (PowerShell):
 
-- `vimrc`: Arquivo principal de configuração.
-- `autoload/`, `plugged/`: Diretórios para plugins e scripts auxiliares.
+```powershell
+Copy-Item .vimrc $HOME\_vimrc -Force
+```
 
-## Personalização
+## Customization
 
-Sinta-se à vontade para modificar as configurações conforme suas necessidades.
+- Adjust key mappings to your preferences
+- Add plugin manager sections if needed
+- Split machine-specific options into local override files
+
+## Recommended Next Steps
+
+- Add plugin manager documentation (if used)
+- Add startup performance notes
+- Add separate Neovim configuration (if applicable)
+
+## License
+
+This project is available under the repository license terms.
