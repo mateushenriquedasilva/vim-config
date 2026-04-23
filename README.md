@@ -2,6 +2,8 @@
 
 Personal Vim configuration repository.
 
+![Personal Vim](./img/img.png)
+
 ## Overview
 
 This repository centralizes a custom Vim setup focused on productivity, readability, and efficient editing workflows. It is intended as a reproducible dotfiles-style configuration that can be installed quickly on new environments.
