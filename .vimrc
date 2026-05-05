@@ -10,9 +10,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Inclui sintaxe, linting, e ferramentas como GoImports.
 Plug 'fatih/vim-go'
 
-" Adicione este plugin para o destaque de sintaxe de Java
-Plug 'sheerun/vim-polyglot'
-
 " Gerenciador de arquivos.
 " Essencial para navegar pela estrutura de projetos.
 Plug 'preservim/nerdtree'
@@ -69,7 +66,7 @@ let g:go_highlight_structs = 1
 " Após salvar e fechar o Vim, ao reabrir, execute os comandos:
 " :CocInstall coc-go
 " :CocInstall coc-java
-let g:coc_global_extensions = ['coc-go', 'coc-java']
+let g:coc_global_extensions = ['coc-go']
 
 " Atalho para abrir o terminal com a tecla F1
 nnoremap <F1> :belowright terminal<CR>
