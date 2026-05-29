@@ -4,6 +4,12 @@ Configuracao pessoal de Vim com foco em produtividade para Go/Java, autocompleta
 
 ![Personal Vim](./img/img.png)
 
+## Novas atualizações
+
+- **2026-05-29** — Estrutura do README atualizada com uma seção de changelog e instruções rápidas de validação.
+- **Como aplicar**: após atualizar a configuração, rode `:PlugInstall` e `:GoInstallBinaries` dentro do Vim.
+- Se você tiver as alterações específicas, me diga que eu atualizo o changelog com detalhes.
+
 ## O que esta configurado
 
 - `coc.nvim`: autocompletar, diagnosticos e LSP
