@@ -1,46 +1,58 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'fatih/vim-go'
+" file explore
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'sainnhe/gruvbox-material'
-Plug 'luochen1990/rainbow'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'mhinz/vim-startify'
-Plug 'jiangmiao/auto-pairs'
-Plug 'preservim/nerdcommenter'
+" git integration
 Plug 'tpope/vim-fugitive'
+" sintax highlightin
+Plug 'sheerun/vim-polyglot'
+" status line
+Plug 'vim-airline/vim-airline'
+" color sheme
+Plug 'morhetz/gruvbox'
+" language support
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" terminal
+Plug 'voldikss/vim-floaterm'
+" search file
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" icons
+Plug 'ryanoasis/vim-devicons'
+" commentary with gcc
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
+set encoding=UTF-8
+
 syntax on
-filetype plugin indent on
-
 set number
-set relativenumber
-
-set tabstop=4
-set shiftwidth=4
 set expandtab
-
-set mouse=a
+set shiftwidth=4
+set tabstop=4
 set termguicolors
-
-colorscheme gruvbox-material
-
-let g:rainbow_active = 1
-
-nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <F1> :belowright terminal<CR>
+colorscheme gruvbox
 
 let g:coc_global_extensions = [
-\ 'coc-go',
-\ 'coc-clangd',
-\ 'coc-json'
-\ ]
+      \ 'coc-go'
+      \ ]
 
-autocmd BufWritePre *.go :silent! GoFmt
-autocmd BufWritePre *.c,*.cpp silent! execute ':!clang-format -i %'
+let g:webdevicons_enable_nerdtree = 1
 
-nnoremap <F5> :w<CR>:!gcc % -o %< && ./%<<CR>
+" autocomplete with Tab
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#confirm() :
+      \ "\<Tab>"
+
+" Toggle NERDTree with Ctrl + b
+nnoremap <C-b> :NERDTreeToggle<CR>
+
+" open/close terminal
+nnoremap <silent> <C-t> :FloatermToggle<CR>
+
+" back to vim
+tnoremap <silent> <C-t> <C-\><C-n>:FloatermToggle<CR>
+
+" search file
+nnoremap <C-p> :Files<CR>
